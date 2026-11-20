@@ -1,0 +1,8 @@
+# Raspberry Pi version (src/rpi_test.py)
+# Install system packages first (Raspberry Pi OS):
+#   sudo apt update
+#   sudo apt install -y python3-picamera2 espeak-ng python3-opencv
+# Create the venv with --system-site-packages so picamera2 is visible:
+#   python3 -m venv --system-site-packages venv && source venv/bin/activate
+ultralytics
+pyttsx3

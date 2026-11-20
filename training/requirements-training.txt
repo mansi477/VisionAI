@@ -1,0 +1,4 @@
+# Only needed for LOCAL training / data prep (Colab installs these itself)
+ultralytics
+pyyaml
+opencv-python

@@ -1,0 +1,8 @@
+# Windows desktop prototype (src/test.py) + Piper voice test (src/v.py)
+# Python 3.9+ recommended. tkinter ships with the standard Python installer.
+ultralytics
+opencv-python
+Pillow
+pyttsx3
+pywin32        # COM support for the SAPI5 voice engine
+piper-tts      # only needed for src/v.py

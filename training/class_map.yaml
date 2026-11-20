@@ -1,0 +1,64 @@
+# =====================================================================
+# VisionAI master class list + name mapping
+# =====================================================================
+# master_classes: the final classes the model will learn. ORDER = class id.
+#   Names deliberately match the COCO names your scripts already use
+#   (person, bicycle, motorcycle, car, bus, truck) so OBJECT_WIDTHS keeps working.
+#
+# aliases: for each master class, the names other datasets use for it.
+#   Matching ignores case, spaces and hyphens ("Auto-Rickshaw" == "auto_rickshaw").
+#
+# Any source class NOT listed here is dropped, and merge_datasets.py prints
+# every dropped name with its count, so you can decide whether to add it.
+# =====================================================================
+
+master_classes:
+  - person
+  - bicycle
+  - motorcycle
+  - car
+  - bus
+  - truck
+  - auto_rickshaw
+  - cart
+  - animal
+  - pothole
+  - open_manhole_drain
+  - barricade
+  - traffic_cone
+  - construction_vehicle
+  - speed_bump
+  - water_puddle
+
+aliases:
+  person:        [person, pedestrian, people]
+  bicycle:       [bicycle, cycle]
+  motorcycle:    [motorcycle, motorbike, motor_bike]
+  car:           [car]
+  bus:           [bus]
+  truck:         [truck, commercial_vehicle, lorry]
+  auto_rickshaw: [autorickshaw, auto_rickshaw, rickshaw]
+  cart:          [cart, pushcart, handcart]
+  # One pooled "animal" class trains better than many tiny species classes.
+  animal:        [animal, cattle, cow, bovinos, dog, goat, horse, camel, buffalo, sheep, pig, donkey]
+  # "plothole" is a typo that exists in one public Roboflow dataset.
+  pothole:       [pothole, potholes, plothole, path_holes, d40]
+  # Only OPEN manholes/drains are hazards. Plain "manhole" (a closed cover) is
+  # intentionally NOT mapped. If a dataset's "manhole" means open ones, add it
+  # under overrides below for that dataset only.
+  open_manhole_drain: [open_manhole, open_manholes, drain, open_drain]
+  barricade:     [barricade, barrier, construction_barrier, road_barrier, temporary_traffic_barrier, construction_board]
+  traffic_cone:  [traffic_cone, traffic_cones, cone]
+  construction_vehicle: [construction_vehicle, excavator, jcb, bulldozer]
+  speed_bump:    [speed_bump, speedbump, speed_breaker, marked_speed_bump, unmarked_speed_bump]
+  water_puddle:  [water_puddle, stuck_water, puddle, waterlogging]
+
+# Per-dataset exceptions. Key = the dataset's FOLDER NAME (zip name without .zip).
+# Value null/None = drop that class for this dataset only.
+overrides: {}
+  # Example:
+  # indian-roads-detection:
+  #   manhole: open_manhole_drain
+  #   bike: motorcycle
+  # cow_detection:
+  #   rider: null

@@ -1,0 +1,29 @@
+# ---- Python ----
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# ---- Secrets (Twilio keys, API keys, phone numbers): NEVER commit ----
+.env
+*.env
+secrets.*
+config_private.*
+
+# ---- Training data and outputs: huge and separately licensed ----
+raw/
+raw_datasets/
+datasets/
+runs/
+preview*/
+pred/
+
+# ---- Piper voice models (~60 MB): download separately, see README ----
+*.onnx
+*.onnx.json
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
