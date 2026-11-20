@@ -2,9 +2,6 @@
 
 **An AI-powered, real-time assistive navigation and safety system for the visually impaired, designed for Indian roads.**
 
-Presented by M.D. Manasvini and Ayush Suryawamshi
-Guide: Mr. Shreyas Sridhar, Assistant Professor, CSE, Sir MVIT
-
 ---
 
 ## 1. Overview
